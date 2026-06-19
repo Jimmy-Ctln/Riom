@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonds sombres */
+  --color-riom-dark-900: #120b04;
+  --color-riom-dark-800: #1e1208;
+  --color-riom-dark-700: #362010;
+
+  /* Accents caramel / ambre */
+  --color-riom-caramel: #c06812;
+  --color-riom-amber: #e09828;
+
+  /* Section claire */
+  --color-riom-cream: #f7eedc;
+
+  --font-serif: "Playfair Display", "Georgia", serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Anton", "Inter", sans-serif;
+}
