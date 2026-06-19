@@ -185,6 +185,7 @@ Règles supplémentaires :
 
 - Séparer les commits par sujet : ne jamais tout envoyer en un seul commit massif, même pour une session de travail longue
 - Ne jamais commit sur `main` : tout le travail se fait sur `dev` (ou une branche de feature dérivée de `dev`)
+- Toujours demander confirmation à Jimmy avant de créer un commit, même si le découpage proposé semble évident
 
 ---
 
