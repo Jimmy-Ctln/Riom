@@ -131,7 +131,16 @@ Le site doit être :
 
 ---
 
-### 6. Audio / musique
+### 6. Une seule page, pas de routeur
+
+Le site est une **single page** : pas de routeur, pas de navigation par URL/pages séparées (`/mario`, `/contact`, etc.).
+
+- Toutes les "pages" décrites dans `/claude/pages.md` (Home, Mario, Musiciens, Écouter, Vidéos, Galerie, Prestations, Contact) sont en réalité des **sections** empilées verticalement sur une seule page (`src/pages/index.astro`)
+- L'utilisateur navigue en scrollant ; chaque section a un `id` (ex : `id="mario"`)
+- Le menu (`Nav.astro`) doit faire défiler la page vers l'ancre correspondante (`<a href="#mario">`), jamais rediriger vers une nouvelle URL/route
+- Ne pas créer de fichiers dans `src/pages/` autres que `index.astro` pour ces sections
+
+### 7. Audio / musique
 
 - les fichiers MP3 sont stockés dans :
   /frontend/public/music
@@ -171,13 +180,13 @@ Claude doit respecter le format Conventional Commits pour chaque commit :
 
 - `type` : `feat`, `fix`, `chore`, `style`, `refactor`, `docs`, `perf`, `test`
 - `scope` : la zone concernée entre parenthèses (ex : `home`, `nav`, `mario`, `frontend`, `seo`)
-- `description` : courte, à l'impératif, en français, sans majuscule ni point final
+- `description` : courte, à l'impératif, **en anglais**, sans majuscule ni point final
 
 Exemples :
 
-- `feat(home): ajoute le hero avec image et CTA`
-- `fix(nav): corrige la fermeture du menu au clic sur un lien`
-- `chore(mockups): renomme les fichiers de design`
+- `feat(home): add hero with image and CTAs`
+- `fix(nav): fix menu closing on link click`
+- `chore(mockups): rename design files`
 
 Un commit = un changement cohérent. Ne pas mélanger plusieurs sujets dans un seul commit.
 
