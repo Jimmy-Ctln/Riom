@@ -1,0 +1,98 @@
+---
+const items = [
+	{ number: "01", label: "Accueil", href: "#accueil" },
+	{ number: "02", label: "Mario", href: "#mario" },
+	{ number: "03", label: "Le Groupe", href: "#groupe" },
+	{ number: "04", label: "Écouter", href: "#ecouter" },
+	{ number: "05", label: "Vidéos", href: "#videos" },
+	{ number: "06", label: "Galerie", href: "#galerie" },
+	{ number: "07", label: "Prestations", href: "#prestations" },
+	{ number: "08", label: "Contact", href: "#contact" },
+];
+---
+
+<div id="site-nav" class="fixed inset-0 z-50 hidden flex-col bg-riom-dark-900" aria-hidden="true">
+	<span
+		class="pointer-events-none absolute -bottom-16 -left-8 select-none font-display text-[40vw] leading-none text-riom-cream/5"
+		aria-hidden="true"
+	>
+		R
+	</span>
+
+	<div class="relative z-10 flex items-center justify-end px-6 py-6 sm:px-10">
+		<button
+			type="button"
+			id="nav-close"
+			class="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-riom-cream"
+			aria-label="Fermer le menu"
+		>
+			Fermer
+			<span class="relative block h-4 w-4">
+				<span class="absolute left-0 top-1/2 block h-px w-4 -translate-y-1/2 rotate-45 bg-riom-cream"></span>
+				<span class="absolute left-0 top-1/2 block h-px w-4 -translate-y-1/2 -rotate-45 bg-riom-cream"></span>
+			</span>
+		</button>
+	</div>
+
+	<nav class="relative z-10 flex-1 overflow-y-auto px-6 sm:px-10" aria-label="Navigation principale">
+		<ul>
+			{
+				items.map((item) => (
+					<li class="border-t border-riom-cream/10 first:border-t-0">
+						<a href={item.href} class="group flex items-baseline gap-4 py-5 sm:py-7">
+							<span class="font-sans text-xs text-riom-amber">{item.number}</span>
+							<span class="font-display text-4xl uppercase leading-none text-riom-cream transition group-hover:text-riom-amber sm:text-6xl">
+								{item.label}
+							</span>
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</nav>
+
+	<div
+		class="relative z-10 flex flex-col gap-2 px-6 py-6 text-xs uppercase tracking-[0.2em] text-riom-cream/70 sm:flex-row sm:items-center sm:justify-between sm:px-10"
+	>
+		<p>Riom · Musique acoustique · 2015</p>
+		<p>contact@riom-musique.fr</p>
+	</div>
+</div>
+
+<script>
+	const nav = document.getElementById("site-nav");
+	const openButton = document.getElementById("nav-toggle");
+	const closeButton = document.getElementById("nav-close");
+
+	function openNav() {
+		nav?.classList.remove("hidden");
+		nav?.classList.add("flex");
+		nav?.setAttribute("aria-hidden", "false");
+		openButton?.setAttribute("aria-expanded", "true");
+		document.body.classList.add("overflow-hidden");
+	}
+
+	function closeNav() {
+		nav?.classList.add("hidden");
+		nav?.classList.remove("flex");
+		nav?.setAttribute("aria-hidden", "true");
+		openButton?.setAttribute("aria-expanded", "false");
+		document.body.classList.remove("overflow-hidden");
+	}
+
+	openButton?.addEventListener("click", openNav);
+	closeButton?.addEventListener("click", closeNav);
+	nav?.querySelectorAll("a").forEach((link) => {
+		link.addEventListener("click", (event) => {
+			event.preventDefault();
+			const targetId = link.getAttribute("href");
+			closeNav();
+			if (targetId) {
+				document.querySelector(targetId)?.scrollIntoView({ behavior: "smooth" });
+			}
+		});
+	});
+	document.addEventListener("keydown", (event) => {
+		if (event.key === "Escape") closeNav();
+	});
+</script>

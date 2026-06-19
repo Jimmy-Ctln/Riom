@@ -1,0 +1,97 @@
+---
+---
+
+<section id="contact" class="bg-riom-dark-900 pt-24 text-riom-cream">
+	<div class="reveal grid gap-16 px-6 pb-24 pt-4 sm:px-10 lg:grid-cols-2 lg:items-start lg:gap-24 lg:pb-32 lg:pt-6">
+		<div>
+			<p class="text-sm font-semibold uppercase tracking-[0.3em] text-riom-amber">— Contact —</p>
+			<h2 class="mt-6 font-display text-5xl uppercase leading-[0.95] sm:text-6xl lg:text-7xl">
+				Faites entrer Riom dans votre programmation.
+			</h2>
+			<p class="mt-8 max-w-xl text-lg leading-relaxed text-riom-cream/80 sm:text-xl">
+				Une date, un lieu, une envie ! Écrivez-nous — nous revenons vers vous rapidement pour
+				construire ensemble votre soirée.
+			</p>
+
+			<div class="mt-12 space-y-4 text-base">
+				<p class="flex items-center gap-3 text-riom-cream/80">
+					<span aria-hidden="true">📞</span>
+					06 00 00 00 00
+				</p>
+				<p class="flex items-center gap-3 text-riom-cream/80">
+					<span aria-hidden="true">✉️</span>
+					contact@riom-musique.fr
+				</p>
+			</div>
+		</div>
+
+		<form id="contact-form" class="rounded-sm bg-riom-cream/5 p-8 sm:p-10">
+			<div class="grid gap-6 sm:grid-cols-2">
+				<label class="block text-sm uppercase tracking-[0.2em] text-riom-cream/50">
+					Votre nom
+					<input
+						type="text"
+						name="name"
+						placeholder="Nom / structure"
+						class="mt-3 w-full rounded-sm border border-riom-cream/15 bg-riom-dark-900 px-4 py-4 text-base text-riom-cream placeholder:text-riom-cream/30 focus:border-riom-caramel focus:outline-none"
+					/>
+				</label>
+				<label class="block text-sm uppercase tracking-[0.2em] text-riom-cream/50">
+					Email
+					<input
+						type="email"
+						name="email"
+						placeholder="vous@exemple.fr"
+						class="mt-3 w-full rounded-sm border border-riom-cream/15 bg-riom-dark-900 px-4 py-4 text-base text-riom-cream placeholder:text-riom-cream/30 focus:border-riom-caramel focus:outline-none"
+					/>
+				</label>
+				<label class="block text-sm uppercase tracking-[0.2em] text-riom-cream/50">
+					Type d'événement
+					<select
+						name="event-type"
+						class="mt-3 w-full rounded-sm border border-riom-cream/15 bg-riom-dark-900 px-4 py-4 text-base text-riom-cream focus:border-riom-caramel focus:outline-none"
+					>
+						<option>Concert privé</option>
+						<option>Mariage</option>
+						<option>Entreprise</option>
+						<option>Festival</option>
+						<option>Autre</option>
+					</select>
+				</label>
+				<label class="block text-sm uppercase tracking-[0.2em] text-riom-cream/50">
+					Date envisagée
+					<input
+						type="date"
+						name="date"
+						class="mt-3 w-full rounded-sm border border-riom-cream/15 bg-riom-dark-900 px-4 py-4 text-base text-riom-cream focus:border-riom-caramel focus:outline-none"
+					/>
+				</label>
+			</div>
+
+			<label class="mt-6 block text-sm uppercase tracking-[0.2em] text-riom-cream/50">
+				Votre message
+				<textarea
+					name="message"
+					rows="5"
+					placeholder="Parlez-nous de votre lieu, de votre public, de vos envies."
+					class="mt-3 w-full rounded-sm border border-riom-cream/15 bg-riom-dark-900 px-4 py-4 text-base text-riom-cream placeholder:text-riom-cream/30 focus:border-riom-caramel focus:outline-none"
+				></textarea>
+			</label>
+
+			<button
+				type="submit"
+				class="mt-8 w-full rounded-sm bg-riom-caramel px-6 py-4 text-sm font-semibold uppercase tracking-[0.2em] text-riom-dark-900 transition hover:bg-riom-amber active:scale-[0.98]"
+			>
+				Envoyer la demande
+			</button>
+
+			<p class="mt-5 text-center text-sm text-riom-cream/40">On répond vite, promis. Pas de blabla, juste de la musique.</p>
+		</form>
+	</div>
+</section>
+
+<script>
+	document.getElementById("contact-form")?.addEventListener("submit", (event) => {
+		event.preventDefault();
+	});
+</script>

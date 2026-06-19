@@ -1,0 +1,56 @@
+---
+interface Props {
+	id: string;
+	eyebrow: string;
+	title: string;
+	featured?: boolean;
+}
+
+const { id, eyebrow, title, featured = false } = Astro.props;
+---
+
+<div>
+	<div class="video-embed group relative aspect-video overflow-hidden rounded-sm bg-riom-dark-700" data-video-id={id} data-title={title}>
+		<img
+			src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`}
+			alt={`Miniature — ${title}`}
+			class="h-full w-full object-cover"
+			loading="lazy"
+		/>
+		<button
+			type="button"
+			class="play-video absolute inset-0 flex items-center justify-center bg-riom-dark-900/30 transition group-hover:bg-riom-dark-900/10"
+			aria-label={`Lire la vidéo : ${title}`}
+		>
+			<span
+				class:list={[
+					"flex items-center justify-center rounded-full bg-riom-caramel text-riom-dark-900 transition group-hover:bg-riom-amber",
+					featured ? "h-20 w-20 text-2xl" : "h-14 w-14 text-lg",
+				]}
+			>
+				▶
+			</span>
+		</button>
+	</div>
+	<div class="bg-riom-dark-700 px-4 py-3">
+		<p class="text-xs font-semibold uppercase tracking-[0.2em] text-riom-amber">{eyebrow}</p>
+		<p class="mt-1 font-display uppercase leading-none text-riom-cream">{title}</p>
+	</div>
+</div>
+
+<script>
+	document.querySelectorAll<HTMLElement>(".video-embed").forEach((wrapper) => {
+		const button = wrapper.querySelector(".play-video");
+		button?.addEventListener("click", () => {
+			const id = wrapper.dataset.videoId;
+			const title = wrapper.dataset.title ?? "Vidéo";
+			const iframe = document.createElement("iframe");
+			iframe.src = `https://www.youtube.com/embed/${id}?autoplay=1`;
+			iframe.title = title;
+			iframe.className = "absolute inset-0 h-full w-full";
+			iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+			iframe.allowFullscreen = true;
+			wrapper.replaceChildren(iframe);
+		});
+	});
+</script>

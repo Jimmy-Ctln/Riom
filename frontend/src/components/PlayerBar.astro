@@ -1,0 +1,200 @@
+---
+---
+
+<div
+	id="player-bar"
+	class="fixed inset-x-0 bottom-0 z-40 translate-y-full border-t border-riom-cream/10 bg-riom-dark-900 px-4 py-3 transition-transform duration-300 sm:px-8"
+>
+	<audio id="audio-player"></audio>
+	<div class="mx-auto flex max-w-6xl items-center gap-4">
+		<div class="min-w-0 flex-1">
+			<p id="bar-title" class="truncate font-display text-sm uppercase leading-none text-riom-cream">—</p>
+			<div class="mt-2 flex items-center gap-2 text-[10px] text-riom-cream/50">
+				<span id="bar-current">0:00</span>
+				<input
+					id="bar-seek"
+					type="range"
+					min="0"
+					max="100"
+					value="0"
+					class="h-1 flex-1 accent-riom-caramel"
+					aria-label="Avancer dans le titre"
+				/>
+				<span id="bar-duration">0:00</span>
+			</div>
+		</div>
+
+		<div class="flex items-center gap-3">
+			<button id="bar-prev" type="button" aria-label="Titre précédent" class="text-riom-cream/70 transition hover:text-riom-cream">
+				⏮
+			</button>
+			<button
+				id="bar-toggle"
+				type="button"
+				aria-label="Lecture / pause"
+				class="flex h-9 w-9 items-center justify-center rounded-full bg-riom-caramel text-riom-dark-900 transition hover:bg-riom-amber"
+			>
+				▶
+			</button>
+			<button id="bar-next" type="button" aria-label="Titre suivant" class="text-riom-cream/70 transition hover:text-riom-cream">
+				⏭
+			</button>
+		</div>
+
+		<div class="hidden items-center gap-2 sm:flex">
+			<span aria-hidden="true" class="text-riom-cream/50">🔊</span>
+			<input
+				id="bar-volume"
+				type="range"
+				min="0"
+				max="1"
+				step="0.01"
+				value="1"
+				class="h-1 w-20 accent-riom-caramel"
+				aria-label="Volume"
+			/>
+		</div>
+
+		<button
+			id="bar-close"
+			type="button"
+			aria-label="Fermer le lecteur"
+			class="border-l border-riom-cream/10 pl-4 text-riom-cream/50 transition hover:text-riom-cream"
+		>
+			✕
+		</button>
+	</div>
+</div>
+
+<script>
+	function formatTime(seconds: number) {
+		if (!isFinite(seconds)) return "--:--";
+		const minutes = Math.floor(seconds / 60);
+		const secs = Math.floor(seconds % 60)
+			.toString()
+			.padStart(2, "0");
+		return `${minutes}:${secs}`;
+	}
+
+	const rows = Array.from(document.querySelectorAll<HTMLButtonElement>(".track-row"));
+	const audio = document.getElementById("audio-player") as HTMLAudioElement | null;
+	const bar = document.getElementById("player-bar");
+	const barTitle = document.getElementById("bar-title");
+	const barToggle = document.getElementById("bar-toggle");
+	const barPrev = document.getElementById("bar-prev");
+	const barNext = document.getElementById("bar-next");
+	const barCurrent = document.getElementById("bar-current");
+	const barDuration = document.getElementById("bar-duration");
+	const barSeek = document.getElementById("bar-seek") as HTMLInputElement | null;
+	const barVolume = document.getElementById("bar-volume") as HTMLInputElement | null;
+	const barClose = document.getElementById("bar-close");
+	const nowPlaying = document.getElementById("now-playing");
+
+	let currentIndex = -1;
+
+	function closePlayer() {
+		audio?.pause();
+		currentIndex = -1;
+		setActiveRow(-1);
+		updateEqualizer(false);
+		if (nowPlaying) nowPlaying.textContent = "Sélectionnez un titre";
+		bar?.classList.add("translate-y-full");
+	}
+
+	function setActiveRow(index: number) {
+		rows.forEach((row, i) => {
+			if (i === index) row.setAttribute("aria-current", "true");
+			else row.removeAttribute("aria-current");
+		});
+	}
+
+	function updateEqualizer(playing: boolean) {
+		rows.forEach((row, i) => {
+			const number = row.querySelector(".track-number");
+			const eq = row.querySelector(".track-eq");
+			const isPlayingThis = i === currentIndex && playing;
+			number?.classList.toggle("hidden", isPlayingThis);
+			eq?.classList.toggle("hidden", !isPlayingThis);
+			eq?.classList.toggle("flex", isPlayingThis);
+		});
+	}
+
+	function loadTrack(index: number, autoplay: boolean) {
+		const row = rows[index];
+		if (!row || !audio) return;
+		currentIndex = index;
+		audio.src = row.dataset.src ?? "";
+		const title = row.dataset.title ?? "";
+		if (barTitle) barTitle.textContent = title;
+		if (nowPlaying) nowPlaying.textContent = title;
+		setActiveRow(index);
+		updateEqualizer(false);
+		bar?.classList.remove("translate-y-full");
+		if (autoplay) audio.play();
+	}
+
+	function togglePlay() {
+		if (!audio) return;
+		if (currentIndex === -1) {
+			loadTrack(0, true);
+			return;
+		}
+		if (audio.paused) audio.play();
+		else audio.pause();
+	}
+
+	function playNext() {
+		if (rows.length === 0) return;
+		loadTrack((currentIndex + 1) % rows.length, true);
+	}
+
+	function playPrev() {
+		if (rows.length === 0) return;
+		loadTrack((currentIndex - 1 + rows.length) % rows.length, true);
+	}
+
+	rows.forEach((row, index) => {
+		row.addEventListener("click", () => {
+			if (index === currentIndex) togglePlay();
+			else loadTrack(index, true);
+		});
+
+		const probe = new Audio();
+		probe.preload = "metadata";
+		probe.src = row.dataset.src ?? "";
+		probe.addEventListener("loadedmetadata", () => {
+			const span = row.querySelector(".track-duration");
+			if (span) span.textContent = formatTime(probe.duration);
+		});
+	});
+
+	barToggle?.addEventListener("click", togglePlay);
+	barPrev?.addEventListener("click", playPrev);
+	barNext?.addEventListener("click", playNext);
+	barClose?.addEventListener("click", closePlayer);
+
+	audio?.addEventListener("play", () => {
+		if (barToggle) barToggle.textContent = "⏸";
+		updateEqualizer(true);
+	});
+	audio?.addEventListener("pause", () => {
+		if (barToggle) barToggle.textContent = "▶";
+		updateEqualizer(false);
+	});
+	audio?.addEventListener("ended", playNext);
+	audio?.addEventListener("timeupdate", () => {
+		if (!audio) return;
+		if (barCurrent) barCurrent.textContent = formatTime(audio.currentTime);
+		if (barSeek && audio.duration) barSeek.value = String((audio.currentTime / audio.duration) * 100);
+	});
+	audio?.addEventListener("loadedmetadata", () => {
+		if (audio && barDuration) barDuration.textContent = formatTime(audio.duration);
+	});
+
+	barSeek?.addEventListener("input", () => {
+		if (audio && audio.duration) audio.currentTime = (Number(barSeek.value) / 100) * audio.duration;
+	});
+	barVolume?.addEventListener("input", () => {
+		if (audio && barVolume) audio.volume = Number(barVolume.value);
+	});
+</script>
