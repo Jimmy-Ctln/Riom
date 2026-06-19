@@ -1,0 +1,65 @@
+---
+const tracks = [
+	{ title: "Au pied du mur", file: "/music/au-pied-du-mur.mp3" },
+	{ title: "Il faut que", file: "/music/Il-faut-que.mp3" },
+	{ title: "Allez viens", file: "/music/allez-viens.mp3" },
+	{ title: "Laisse-toi aller", file: "/music/laisse-toi-aller.mp3" },
+	{ title: "J'aime les gens", file: "/music/jaime-les-gens.mp3" },
+	{ title: "Elle", file: "/music/elle.mp3" },
+];
+---
+
+<section id="ecouter" class="bg-riom-dark-800 pt-24 text-riom-cream">
+	<div class="reveal px-6 pb-16 pt-4 sm:px-10 lg:pb-24 lg:pt-6">
+		<h2 class="max-w-3xl font-display text-5xl uppercase leading-[0.95] sm:text-6xl lg:text-7xl">
+			Mettez le casque. Laissez parler les cordes.
+		</h2>
+
+		<div class="mt-12 grid gap-10 lg:grid-cols-[560px_1fr] lg:gap-20">
+			<div>
+				<div class="relative aspect-square w-full overflow-hidden rounded-sm bg-riom-dark-700">
+					<img
+						src="/images/album.webp"
+						alt="Pochette de l'album « Sur la corde »"
+						class="h-full w-full object-cover"
+						loading="lazy"
+					/>
+				</div>
+				<p class="mt-6 text-xs uppercase tracking-[0.2em] text-riom-cream/50">En écoute</p>
+				<p id="now-playing" class="font-display text-2xl uppercase leading-none text-riom-cream">
+					Sélectionnez un titre
+				</p>
+			</div>
+
+			<ol class="divide-y divide-riom-cream/10" id="track-list">
+				{
+					tracks.map((track, index) => (
+						<li>
+							<button
+								type="button"
+								class="track-row flex w-full items-center gap-5 px-4 py-6 text-left transition hover:bg-riom-cream/5 aria-current:bg-riom-caramel/20"
+								data-src={track.file}
+								data-title={track.title}
+							>
+								<span class="flex w-8 shrink-0 items-center justify-center">
+									<span class="track-number text-sm text-riom-cream/40">
+										{String(index + 1).padStart(2, "0")}
+									</span>
+									<span class="track-eq hidden items-end gap-0.5" aria-hidden="true">
+										<span class="eq-bar h-2.5 w-1 bg-riom-caramel"></span>
+										<span class="eq-bar h-4 w-1 bg-riom-caramel" style="animation-delay: 0.15s"></span>
+										<span class="eq-bar h-2.5 w-1 bg-riom-caramel" style="animation-delay: 0.3s"></span>
+									</span>
+								</span>
+								<span class="track-title flex-1 truncate font-sans text-base uppercase tracking-wide sm:text-lg">
+									{track.title}
+								</span>
+								<span class="track-duration shrink-0 text-sm text-riom-cream/40">--:--</span>
+							</button>
+						</li>
+					))
+				}
+			</ol>
+		</div>
+	</div>
+</section>

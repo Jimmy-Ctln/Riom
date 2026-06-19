@@ -2,6 +2,9 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Nav from "../components/Nav.astro";
+import PlayerBar from "../components/PlayerBar.astro";
+import Footer from "../components/Footer.astro";
+import ScrollReveal from "../components/ScrollReveal.astro";
 
 interface Props {
   title: string;
@@ -30,5 +33,8 @@ const { title, description } = Astro.props;
 		<Header />
 		<Nav />
 		<slot />
+		<Footer />
+		<PlayerBar />
+		<ScrollReveal />
 	</body>
 </html>

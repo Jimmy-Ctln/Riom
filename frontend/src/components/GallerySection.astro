@@ -1,0 +1,95 @@
+---
+const photos = [
+	{ src: "/images/old-mario-5.webp", alt: "Mario en solo, guitare et voix" },
+	{ src: "/images/gallery-2.webp", alt: "Mario et Max en duo de guitares sur scène" },
+	{ src: "/images/old-clement.webp", alt: "Clément aux percussions en concert" },
+	{ src: "/images/gallery-1.webp", alt: "Mario, Max et Clément après un concert" },
+	{ src: "/images/old-max.webp", alt: "Max à la guitare sur scène" },
+	{ src: "/images/old-mario-4.webp", alt: "Mario en concert, chapeau et guitare" },
+	{ src: "/images/gallery-5.webp", alt: "Riom en concert, ambiance live" },
+	{ src: "/images/old-mario-2.webp", alt: "Mario en studio d'enregistrement" },
+];
+---
+
+<section id="galerie" class="bg-riom-dark-900 pt-24 text-riom-cream">
+	<div class="reveal px-6 pb-16 pt-4 sm:px-10 lg:pb-24 lg:pt-6">
+		<h2 class="font-display text-5xl uppercase leading-[0.95] sm:text-6xl">Des scènes, des cordes, des regards.</h2>
+
+		<div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3">
+			{
+				photos.map((photo) => (
+					<button
+						type="button"
+						class="gallery-item group aspect-square overflow-hidden rounded-sm"
+						data-src={photo.src}
+						data-alt={photo.alt}
+						aria-label={`Agrandir : ${photo.alt}`}
+					>
+						<img
+							src={photo.src}
+							alt={photo.alt}
+							class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
+							loading="lazy"
+						/>
+					</button>
+				))
+			}
+		</div>
+	</div>
+</section>
+
+<div
+	id="lightbox"
+	class="fixed inset-0 z-50 hidden items-center justify-center bg-riom-dark-900/95 p-6"
+	role="dialog"
+	aria-modal="true"
+	aria-hidden="true"
+>
+	<button
+		id="lightbox-close"
+		type="button"
+		aria-label="Fermer l'image"
+		class="absolute right-6 top-6 text-2xl text-riom-cream/80 transition hover:text-riom-cream"
+	>
+		✕
+	</button>
+	<img id="lightbox-img" src="" alt="" class="max-h-full max-w-full rounded-sm object-contain" />
+</div>
+
+<script>
+	const lightbox = document.getElementById("lightbox");
+	const lightboxImg = document.getElementById("lightbox-img") as HTMLImageElement | null;
+	const lightboxClose = document.getElementById("lightbox-close");
+
+	function openLightbox(src: string, alt: string) {
+		if (!lightbox || !lightboxImg) return;
+		lightboxImg.src = src;
+		lightboxImg.alt = alt;
+		lightbox.classList.remove("hidden");
+		lightbox.classList.add("flex");
+		lightbox.setAttribute("aria-hidden", "false");
+		document.body.classList.add("overflow-hidden");
+	}
+
+	function closeLightbox() {
+		if (!lightbox) return;
+		lightbox.classList.add("hidden");
+		lightbox.classList.remove("flex");
+		lightbox.setAttribute("aria-hidden", "true");
+		document.body.classList.remove("overflow-hidden");
+	}
+
+	document.querySelectorAll<HTMLButtonElement>(".gallery-item").forEach((item) => {
+		item.addEventListener("click", () => {
+			openLightbox(item.dataset.src ?? "", item.dataset.alt ?? "");
+		});
+	});
+
+	lightboxClose?.addEventListener("click", closeLightbox);
+	lightbox?.addEventListener("click", (event) => {
+		if (event.target === lightbox) closeLightbox();
+	});
+	document.addEventListener("keydown", (event) => {
+		if (event.key === "Escape") closeLightbox();
+	});
+</script>

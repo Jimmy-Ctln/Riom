@@ -1,13 +1,13 @@
 ---
 const items = [
-	{ number: "01", label: "Accueil", href: "/" },
-	{ number: "02", label: "Mario", href: "/mario" },
-	{ number: "03", label: "Le Groupe", href: "/musiciens" },
-	{ number: "04", label: "Écouter", href: "/ecouter" },
-	{ number: "05", label: "Vidéos", href: "/videos" },
-	{ number: "06", label: "Galerie", href: "/galerie" },
-	{ number: "07", label: "Prestations", href: "/prestations" },
-	{ number: "08", label: "Contact", href: "/contact" },
+	{ number: "01", label: "Accueil", href: "#accueil" },
+	{ number: "02", label: "Mario", href: "#mario" },
+	{ number: "03", label: "Le Groupe", href: "#groupe" },
+	{ number: "04", label: "Écouter", href: "#ecouter" },
+	{ number: "05", label: "Vidéos", href: "#videos" },
+	{ number: "06", label: "Galerie", href: "#galerie" },
+	{ number: "07", label: "Prestations", href: "#prestations" },
+	{ number: "08", label: "Contact", href: "#contact" },
 ];
 ---
 
@@ -82,7 +82,16 @@ const items = [
 
 	openButton?.addEventListener("click", openNav);
 	closeButton?.addEventListener("click", closeNav);
-	nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeNav));
+	nav?.querySelectorAll("a").forEach((link) => {
+		link.addEventListener("click", (event) => {
+			event.preventDefault();
+			const targetId = link.getAttribute("href");
+			closeNav();
+			if (targetId) {
+				document.querySelector(targetId)?.scrollIntoView({ behavior: "smooth" });
+			}
+		});
+	});
 	document.addEventListener("keydown", (event) => {
 		if (event.key === "Escape") closeNav();
 	});
