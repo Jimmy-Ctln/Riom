@@ -16,10 +16,13 @@ Positionner Riom sur les recherches Google liées aux groupes de musique événe
 
 ## Mots-clés
 
-- groupe musique mariage Île-de-France
 - groupe live Paris
 - animation musicale entreprise
 - groupe acoustique événementiel
+- première partie d'artiste
+- concert privé à domicile
+- groupe acoustique festival théâtre
+- groupe de musique toute la France
 
 ---
 

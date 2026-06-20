@@ -232,10 +232,10 @@ Expliquer les types d’événements où Riom intervient.
 
 ## Contenu attendu
 
-- mariages
-- événements d’entreprise
-- soirées privées
-- restaurants / scènes live
+- première partie d'artistes
+- concert privé à domicile
+- festivals et théâtres (concert d'1h30 environ)
+- déplacements dans toute la France (basé en Île-de-France)
 
 ---
 
