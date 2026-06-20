@@ -251,7 +251,39 @@ Aider le visiteur à se projeter et comprendre les services proposés.
 
 ---
 
-# PAGE 8 — CONTACT
+# PAGE 8 — ILS NOUS FONT CONFIANCE
+
+## Objectif
+
+Rassurer le visiteur en montrant des lieux et scènes connus qui ont déjà accueilli Riom.
+
+---
+
+## Contenu attendu
+
+- une accroche présentant la section ("Des scènes qui nous ont invités")
+- une sélection de lieux/événements ayant accueilli Riom, illustrés par une photo cliquable renvoyant vers le site du lieu (pas de texte de description) :
+  - Le Forum (https://leforum.cergypontoise.fr/), au centre
+  - Pacific Rock (https://pacificrock.fr/)
+  - Solidays (https://www.solidays.org/)
+- la liste est évolutive : d'autres lieux pourront être ajoutés au même format quand ils seront disponibles
+- dans le menu de navigation, cette section est intitulée "Références" (l'ancre reste `#confiance`)
+
+---
+
+## Rôle de la page
+
+Apporter une preuve sociale supplémentaire entre la présentation des prestations et le contact, pour renforcer la crédibilité de Riom avant la prise de contact.
+
+---
+
+## Référence design obligatoire
+
+/claude/design/mockups/trust-in-us.png
+
+---
+
+# PAGE 9 — CONTACT
 
 ## Objectif
 
