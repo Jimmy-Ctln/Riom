@@ -1,4 +1,5 @@
 ---
+import ScrollArrow from "./ScrollArrow.astro";
 ---
 
 <section id="mario" class="bg-riom-dark-800 pt-24 text-riom-cream">
@@ -47,7 +48,7 @@
 			</dl>
 		</div>
 
-		<div class="relative">
+		<div class="relative mx-auto w-full max-w-sm lg:max-w-md">
 			<div
 				class="absolute left-0 top-10 z-10 hidden -translate-x-1/2 rounded-sm bg-riom-caramel px-2 py-3 text-[10px] font-semibold uppercase tracking-[0.3em] text-riom-dark-900 lg:flex"
 				style="writing-mode: vertical-rl;"
@@ -64,4 +65,6 @@
 			</div>
 		</div>
 	</div>
+
+	<ScrollArrow to="#groupe" />
 </section>

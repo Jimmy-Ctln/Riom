@@ -1,0 +1,18 @@
+---
+interface Props {
+	to: string;
+	class?: string;
+}
+
+const { to, class: className = "flex justify-center pb-12 pt-2 sm:pb-16" } = Astro.props;
+---
+
+<a href={to} aria-label="Aller à la section suivante" class={`group ${className}`}>
+	<span
+		class="scroll-arrow flex h-10 w-10 items-center justify-center rounded-full border border-riom-cream/25 text-riom-cream/70 transition group-hover:border-riom-amber group-hover:bg-riom-amber/10 group-hover:text-riom-amber"
+	>
+		<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="h-4 w-4" aria-hidden="true">
+			<path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"></path>
+		</svg>
+	</span>
+</a>

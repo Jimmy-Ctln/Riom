@@ -232,10 +232,10 @@ Expliquer les types d’événements où Riom intervient.
 
 ## Contenu attendu
 
-- mariages
-- événements d’entreprise
-- soirées privées
-- restaurants / scènes live
+- première partie d'artistes
+- concert privé à domicile
+- festivals et théâtres (concert d'1h30 environ)
+- déplacements dans toute la France (basé en Île-de-France)
 
 ---
 
@@ -251,7 +251,39 @@ Aider le visiteur à se projeter et comprendre les services proposés.
 
 ---
 
-# PAGE 8 — CONTACT
+# PAGE 8 — ILS NOUS FONT CONFIANCE
+
+## Objectif
+
+Rassurer le visiteur en montrant des lieux et scènes connus qui ont déjà accueilli Riom.
+
+---
+
+## Contenu attendu
+
+- une accroche présentant la section ("Des scènes qui nous ont invités")
+- une sélection de lieux/événements ayant accueilli Riom, illustrés par une photo cliquable renvoyant vers le site du lieu (pas de texte de description) :
+  - Le Forum (https://leforum.cergypontoise.fr/), au centre
+  - Pacific Rock (https://pacificrock.fr/)
+  - Solidays (https://www.solidays.org/)
+- la liste est évolutive : d'autres lieux pourront être ajoutés au même format quand ils seront disponibles
+- dans le menu de navigation, cette section est intitulée "Références" (l'ancre reste `#confiance`)
+
+---
+
+## Rôle de la page
+
+Apporter une preuve sociale supplémentaire entre la présentation des prestations et le contact, pour renforcer la crédibilité de Riom avant la prise de contact.
+
+---
+
+## Référence design obligatoire
+
+/claude/design/mockups/trust-in-us.png
+
+---
+
+# PAGE 9 — CONTACT
 
 ## Objectif
 
@@ -262,7 +294,7 @@ Permettre la prise de contact directe pour booking.
 ## Contenu attendu
 
 - formulaire de contact simple
-- email
+- email mis en avant : riomcontact@gmail.com (pas de numéro de téléphone sur le site)
 - possibilité de demande de devis
 - call to action clair
 

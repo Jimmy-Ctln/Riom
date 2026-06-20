@@ -1,8 +1,10 @@
 ---
+import ScrollArrow from "./ScrollArrow.astro";
+
 const musicians = [
-	{ number: "02", name: "Max", role: "Guitare", image: "/images/max.webp" },
-	{ number: "01", name: "Mario", role: "Chant & guitare", image: "/images/mario.webp" },
-	{ number: "03", name: "Clément", role: "Percussions", image: "/images/clement.webp" },
+	{ name: "Max", role: "Guitare", image: "/images/max.webp" },
+	{ name: "Mario", role: "Chant & guitare", image: "/images/mario.webp" },
+	{ name: "Clément", role: "Percussions", image: "/images/clement.webp" },
 ];
 ---
 
@@ -23,9 +25,6 @@ const musicians = [
 			{
 				musicians.map((musician) => (
 					<div class="group relative aspect-[3/4] overflow-hidden rounded-sm">
-						<span class="absolute left-4 top-4 z-10 text-xs font-semibold text-riom-cream/70">
-							{musician.number}
-						</span>
 						<img
 							src={musician.image}
 							alt={`${musician.name} en concert — ${musician.role}`}
@@ -41,5 +40,7 @@ const musicians = [
 				))
 			}
 		</div>
+
+		<ScrollArrow to="#ecouter" />
 	</div>
 </section>

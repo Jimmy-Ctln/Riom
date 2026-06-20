@@ -30,6 +30,13 @@ Style :
 
 ---
 
+## Logo
+
+- wordmark texte seul "RIOM" en majuscules (pas d'icône/pictogramme dans le header ni le footer)
+- favicon : pochette d'album (`/public/images/album.webp`) recadrée en carré, exportée en `/public/favicon.png` (512×512) et `/public/apple-touch-icon.png` (180×180)
+
+---
+
 ## UI
 
 - boutons caramel

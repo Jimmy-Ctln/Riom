@@ -1,10 +1,24 @@
+---
+import ScrollArrow from "./ScrollArrow.astro";
+---
+
 <section id="accueil" class="relative flex min-h-screen flex-col justify-end overflow-hidden bg-riom-dark-900">
 	<img
+		id="hero-image"
 		src="/images/riom.webp"
 		alt="Riom en concert"
-		class="absolute inset-0 h-full w-full object-cover"
+		class="absolute inset-0 h-full w-full object-cover transition-opacity duration-1000"
 		fetchpriority="high"
 	/>
+	<video
+		id="hero-video"
+		src="/video/homepage.mp4"
+		class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-1000"
+		muted
+		playsinline
+		preload="none"
+		aria-hidden="true"
+	></video>
 	<div class="absolute inset-0 bg-gradient-to-t from-riom-dark-900 via-riom-dark-900/60 to-riom-dark-900/20" aria-hidden="true"></div>
 
 	<p class="relative z-10 mb-4 px-6 text-xs font-semibold uppercase tracking-[0.3em] text-riom-amber sm:mb-6 sm:px-10">
@@ -37,4 +51,62 @@
 			</a>
 		</div>
 	</div>
+
+	<ScrollArrow to="#mario" class="absolute inset-x-0 bottom-4 z-10 flex justify-center sm:bottom-6" />
 </section>
+
+<script>
+	const image = document.getElementById("hero-image") as HTMLImageElement | null;
+	const video = document.getElementById("hero-video") as HTMLVideoElement | null;
+
+	if (image && video && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+		const PAUSE_BEFORE_VIDEO = 5000;
+		const PRELOAD_BEFORE_VIDEO = 1500;
+		const PAUSE_AFTER_VIDEO = 6000;
+
+		let videoBroken = false;
+
+		function scheduleNextCycle() {
+			setTimeout(preloadVideo, PAUSE_AFTER_VIDEO - PRELOAD_BEFORE_VIDEO);
+			setTimeout(showVideo, PAUSE_AFTER_VIDEO);
+		}
+
+		function preloadVideo() {
+			if (videoBroken) return;
+			video!.preload = "auto";
+			video!.load();
+		}
+
+		function showVideo() {
+			if (videoBroken) return;
+			video!.currentTime = 0;
+			video!
+				.play()
+				.then(() => {
+					image!.classList.add("opacity-0");
+					video!.classList.remove("opacity-0");
+				})
+				.catch(() => scheduleNextCycle());
+		}
+
+		function showImage() {
+			video!.pause();
+			video!.classList.add("opacity-0");
+			image!.classList.remove("opacity-0");
+		}
+
+		// En cas de souci (réseau, format), on reste sur la photo plutôt que de bloquer sur une vidéo cassée.
+		video.addEventListener("error", () => {
+			videoBroken = true;
+			showImage();
+		});
+
+		video.addEventListener("ended", () => {
+			showImage();
+			scheduleNextCycle();
+		});
+
+		setTimeout(preloadVideo, PAUSE_BEFORE_VIDEO - PRELOAD_BEFORE_VIDEO);
+		setTimeout(showVideo, PAUSE_BEFORE_VIDEO);
+	}
+</script>
