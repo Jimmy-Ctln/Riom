@@ -16,13 +16,14 @@ Positionner Riom sur les recherches Google liées aux groupes de musique événe
 
 ## Mots-clés
 
-- groupe live Paris
+- Mario guitare voix solo
+- artiste acoustique Paris
 - animation musicale entreprise
-- groupe acoustique événementiel
+- artiste acoustique événementiel
 - première partie d'artiste
 - concert privé à domicile
-- groupe acoustique festival théâtre
-- groupe de musique toute la France
+- artiste acoustique festival théâtre
+- artiste guitare voix toute la France
 
 ---
 
