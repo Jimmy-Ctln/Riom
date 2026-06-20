@@ -65,6 +65,20 @@ html {
   transform: translateY(0);
 }
 
+@keyframes scroll-arrow-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+.scroll-arrow {
+  animation: scroll-arrow-bounce 1.8s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
@@ -73,6 +87,10 @@ html {
   }
 
   .animate-hero-reveal {
+    animation: none;
+  }
+
+  .scroll-arrow {
     animation: none;
   }
 }

@@ -1,4 +1,6 @@
 ---
+import ScrollArrow from "./ScrollArrow.astro";
+
 const musicians = [
 	{ name: "Max", role: "Guitare", image: "/images/max.webp" },
 	{ name: "Mario", role: "Chant & guitare", image: "/images/mario.webp" },
@@ -38,5 +40,7 @@ const musicians = [
 				))
 			}
 		</div>
+
+		<ScrollArrow to="#ecouter" />
 	</div>
 </section>

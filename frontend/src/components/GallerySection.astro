@@ -1,4 +1,6 @@
 ---
+import ScrollArrow from "./ScrollArrow.astro";
+
 const photos = [
 	{ src: "/images/old-mario-5.webp", alt: "Mario en solo, guitare et voix" },
 	{ src: "/images/gallery-2.webp", alt: "Mario et Max en duo de guitares sur scène" },
@@ -35,6 +37,8 @@ const photos = [
 				))
 			}
 		</div>
+
+		<ScrollArrow to="#prestations" />
 	</div>
 </section>
 
