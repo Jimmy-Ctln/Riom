@@ -294,7 +294,7 @@ Permettre la prise de contact directe pour booking.
 ## Contenu attendu
 
 - formulaire de contact simple
-- email
+- email mis en avant : riomcontact@gmail.com (pas de numéro de téléphone sur le site)
 - possibilité de demande de devis
 - call to action clair
 
