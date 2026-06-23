@@ -106,6 +106,19 @@ import ScrollArrow from "./ScrollArrow.astro";
 			scheduleNextCycle();
 		});
 
+		// Browsers pause the video without firing "ended" when the tab goes to background;
+		// without this, the cycle stays stuck indefinitely when the page becomes visible again.
+		document.addEventListener("visibilitychange", () => {
+			if (document.hidden || videoBroken) return;
+			const videoIsActive = !video!.classList.contains("opacity-0");
+			if (videoIsActive && video!.paused && !video!.ended) {
+				video!.play().catch(() => {
+					showImage();
+					scheduleNextCycle();
+				});
+			}
+		});
+
 		setTimeout(preloadVideo, PAUSE_BEFORE_VIDEO - PRELOAD_BEFORE_VIDEO);
 		setTimeout(showVideo, PAUSE_BEFORE_VIDEO);
 	}
