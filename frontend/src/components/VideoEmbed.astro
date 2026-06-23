@@ -10,7 +10,11 @@ const { id, eyebrow, title, featured = false } = Astro.props;
 ---
 
 <div>
-	<div class="video-embed group relative aspect-video overflow-hidden rounded-sm bg-riom-dark-700" data-video-id={id} data-title={title}>
+	<div
+		class="img-skeleton video-embed group relative aspect-video overflow-hidden rounded-sm bg-riom-dark-700"
+		data-video-id={id}
+		data-title={title}
+	>
 		<img
 			src={`https://i.ytimg.com/vi/${id}/hqdefault.jpg`}
 			alt={`Miniature — ${title}`}

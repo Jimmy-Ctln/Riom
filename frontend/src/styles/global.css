@@ -56,13 +56,36 @@ html {
   opacity: 0;
   transform: translateY(28px);
   transition:
-    opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.img-skeleton.is-loading {
+  animation: skeleton-pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0%,
+  100% {
+    background-color: rgb(255 247 237 / 0.06);
+  }
+  50% {
+    background-color: rgb(255 247 237 / 0.16);
+  }
+}
+
+.img-skeleton img {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.img-skeleton img.is-loaded {
+  opacity: 1;
 }
 
 @keyframes scroll-arrow-bounce {
@@ -92,6 +115,15 @@ html {
 
   .scroll-arrow {
     animation: none;
+  }
+
+  .img-skeleton.is-loading {
+    animation: none;
+  }
+
+  .img-skeleton img {
+    opacity: 1;
+    transition: none;
   }
 }
 

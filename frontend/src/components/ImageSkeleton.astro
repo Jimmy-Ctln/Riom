@@ -1,0 +1,15 @@
+---
+---
+
+<script>
+	function markLoaded(img: HTMLImageElement) {
+		img.classList.add("is-loaded");
+		img.closest(".img-skeleton")?.classList.remove("is-loading");
+	}
+
+	document.querySelectorAll<HTMLImageElement>(".img-skeleton img").forEach((img) => {
+		img.closest(".img-skeleton")?.classList.add("is-loading");
+		if (img.complete) markLoaded(img);
+		else img.addEventListener("load", () => markLoaded(img), { once: true });
+	});
+</script>
