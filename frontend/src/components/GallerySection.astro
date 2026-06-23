@@ -13,8 +13,8 @@ const photos = [
 ];
 ---
 
-<section id="galerie" class="bg-riom-dark-900 pt-24 text-riom-cream">
-	<div class="reveal px-6 pb-16 pt-4 sm:px-10 lg:pb-24 lg:pt-6">
+<section id="galerie" class="bg-riom-dark-900 pt-14 text-riom-cream sm:pt-24">
+	<div class="reveal px-6 pb-10 pt-4 sm:px-10 sm:pb-16 lg:pb-24 lg:pt-6">
 		<h2 class="font-display text-5xl uppercase leading-[0.95] sm:text-6xl">Des scènes, des cordes, des regards.</h2>
 
 		<div class="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-3">
@@ -22,7 +22,7 @@ const photos = [
 				photos.map((photo) => (
 					<button
 						type="button"
-						class="gallery-item group aspect-square overflow-hidden rounded-sm"
+						class="img-skeleton gallery-item group aspect-square overflow-hidden rounded-sm"
 						data-src={photo.src}
 						data-alt={photo.alt}
 						aria-label={`Agrandir : ${photo.alt}`}
@@ -57,7 +57,9 @@ const photos = [
 	>
 		✕
 	</button>
-	<img id="lightbox-img" src="" alt="" class="max-h-full max-w-full rounded-sm object-contain" />
+	<div class="img-skeleton max-h-full max-w-full rounded-sm">
+		<img id="lightbox-img" src="" alt="" class="max-h-full max-w-full rounded-sm object-contain" />
+	</div>
 </div>
 
 <script>
@@ -67,6 +69,9 @@ const photos = [
 
 	function openLightbox(src: string, alt: string) {
 		if (!lightbox || !lightboxImg) return;
+		const skeleton = lightboxImg.closest(".img-skeleton");
+		lightboxImg.classList.remove("is-loaded");
+		skeleton?.classList.add("is-loading");
 		lightboxImg.src = src;
 		lightboxImg.alt = alt;
 		lightbox.classList.remove("hidden");
@@ -82,6 +87,11 @@ const photos = [
 		lightbox.setAttribute("aria-hidden", "true");
 		document.body.classList.remove("overflow-hidden");
 	}
+
+	lightboxImg?.addEventListener("load", () => {
+		lightboxImg.classList.add("is-loaded");
+		lightboxImg.closest(".img-skeleton")?.classList.remove("is-loading");
+	});
 
 	document.querySelectorAll<HTMLButtonElement>(".gallery-item").forEach((item) => {
 		item.addEventListener("click", () => {

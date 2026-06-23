@@ -4,18 +4,21 @@ import ScrollArrow from "./ScrollArrow.astro";
 const venues = [
 	{
 		name: "Pacific Rock",
+		category: "Bar à concerts",
 		src: "/images/pacific-rock.webp",
 		alt: "Riom en concert au Pacific Rock",
 		href: "https://pacificrock.fr/",
 	},
 	{
 		name: "Le Forum",
+		category: "Salle de concert",
 		src: "/images/le-forum.webp",
 		alt: "Riom en concert au Forum",
 		href: "https://leforum.cergypontoise.fr/",
 	},
 	{
 		name: "Solidays",
+		category: "Festival",
 		src: "/images/solidays.webp",
 		alt: "Riom en concert à Solidays",
 		href: "https://www.solidays.org/",
@@ -23,11 +26,11 @@ const venues = [
 ];
 ---
 
-<section id="confiance" class="bg-riom-dark-900 pt-24 text-riom-cream">
-	<div class="reveal px-6 pb-24 pt-4 sm:px-10 lg:pb-32 lg:pt-6">
-		<p class="text-sm font-semibold uppercase tracking-[0.3em] text-riom-amber">— Ils nous font confiance —</p>
+<section id="confiance" class="bg-riom-dark-900 pt-14 text-riom-cream sm:pt-24">
+	<div class="reveal px-6 pb-14 pt-4 sm:px-10 sm:pb-24 lg:pb-32 lg:pt-6">
+		<p class="text-sm font-semibold uppercase tracking-[0.3em] text-riom-amber">— Références —</p>
 		<h2 class="mt-6 font-display text-5xl uppercase leading-[0.95] sm:text-6xl lg:text-7xl">
-			Des scènes qui nous ont invités.
+			Des lieux qui nous ont fait confiance.
 		</h2>
 		<p class="mt-8 max-w-xl text-lg leading-relaxed text-riom-cream/80 sm:text-xl">
 			Festivals, salles et lieux culturels qui ont accueilli Riom sur leur scène.
@@ -42,7 +45,7 @@ const venues = [
 						rel="noopener noreferrer"
 						class="group overflow-hidden rounded-sm bg-riom-cream/5 transition hover:bg-riom-cream/10"
 					>
-						<div class="flex h-44 items-center justify-center bg-riom-cream/10 p-6 sm:h-52">
+						<div class="img-skeleton flex h-44 items-center justify-center bg-riom-cream/10 p-6 sm:h-52">
 							<img
 								src={venue.src}
 								alt={venue.alt}
@@ -55,6 +58,7 @@ const venues = [
 							<p class="mt-6 font-display text-2xl uppercase leading-none text-riom-cream underline-offset-4 group-hover:underline">
 								{venue.name}
 							</p>
+							<p class="mt-2 text-xs uppercase tracking-[0.2em] text-riom-cream/50">{venue.category}</p>
 						</div>
 					</a>
 				))

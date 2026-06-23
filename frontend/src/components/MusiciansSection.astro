@@ -8,8 +8,8 @@ const musicians = [
 ];
 ---
 
-<section id="groupe" class="bg-riom-dark-900 pt-24 text-riom-cream">
-	<div class="reveal px-6 pb-16 pt-4 sm:px-10 lg:pb-24 lg:pt-6">
+<section id="groupe" class="bg-riom-dark-900 pt-14 text-riom-cream sm:pt-24">
+	<div class="reveal px-6 pb-10 pt-4 sm:px-10 sm:pb-16 lg:pb-24 lg:pt-6">
 		<p class="text-xs font-semibold uppercase tracking-[0.3em] text-riom-amber">— Les musiciens —</p>
 
 		<div class="mt-6 flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
@@ -24,7 +24,7 @@ const musicians = [
 		<div class="mt-12 grid gap-6 sm:grid-cols-3">
 			{
 				musicians.map((musician) => (
-					<div class="group relative aspect-[3/4] overflow-hidden rounded-sm">
+					<div class="img-skeleton group relative aspect-[3/4] overflow-hidden rounded-sm">
 						<img
 							src={musician.image}
 							alt={`${musician.name} en concert — ${musician.role}`}

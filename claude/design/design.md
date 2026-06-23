@@ -1,19 +1,19 @@
 # Design System — Riom
 
-## Direction artistique
+## Art direction
 
-Style :
+Style:
 
-- chaleureux
-- folk acoustique
+- warm
+- acoustic folk
 - premium
-- émotionnel
+- emotional
 
 ---
 
 ## Palette
 
-### Fonds sombres
+### Dark backgrounds
 
 - #120b04
 - #1e1208
@@ -24,7 +24,7 @@ Style :
 - #c06812
 - #e09828
 
-### Sections claires
+### Light sections
 
 - #f7eedc
 
@@ -32,24 +32,24 @@ Style :
 
 ## Logo
 
-- wordmark texte seul "RIOM" en majuscules (pas d'icône/pictogramme dans le header ni le footer)
-- favicon : pochette d'album (`/public/images/album.webp`) recadrée en carré, exportée en `/public/favicon.png` (512×512) et `/public/apple-touch-icon.png` (180×180)
+- text-only wordmark "RIOM" in uppercase (no icon/pictogram in the header or footer)
+- favicon: album cover (`/public/images/album.webp`) cropped to a square, exported as `/public/favicon.png` (512×512) and `/public/apple-touch-icon.png` (180×180)
 
 ---
 
 ## UI
 
-- boutons caramel
-- hover ambre
-- CTA visibles
-- scroll fluide
+- caramel buttons
+- amber hover
+- visible CTAs
+- smooth scroll
 
 ---
 
-## Typographie
+## Typography
 
-- serif pour titres
-- sans-serif pour texte
+- serif for headings
+- sans-serif for body text
 
 ---
 
@@ -57,5 +57,5 @@ Style :
 
 - mobile-first
 - minimal
-- rapide
-- lisible
+- fast
+- readable
