@@ -1,283 +1,283 @@
-# Pages du site Riom
+# Riom website pages
 
-## Objectif global
+## Overall goal
 
-Créer un site vitrine SEO-first pour le groupe de musique Riom.
+Build an SEO-first showcase website for the music artist Riom.
 
-Objectif principal :
+Main objective:
 
-- générer des demandes de booking
-- présenter le groupe de manière premium
-- permettre d’écouter, voir et contacter facilement
+- generate booking requests
+- present the artist in a premium way
+- make it easy to listen, watch and get in touch
 
-Le site doit être simple, performant et orienté conversion.
-
----
-
-# PAGE 1 — HOME (Page de présentation principale)
-
-## Objectif
-
-Présenter immédiatement Riom et créer une forte identité visuelle du groupe.
+The site must be simple, fast and conversion-oriented.
 
 ---
 
-## Contenu attendu
+# PAGE 1 — HOME (main landing page)
 
-- Une grande photo principale du groupe Riom
-- Le nom "Riom" affiché de manière très visible (hero typographique fort)
-- Une accroche courte décrivant le groupe
-- Deux call-to-action principaux :
-  - écouter les morceaux
-  - contacter le groupe
+## Objective
+
+Introduce Riom immediately and establish a strong visual identity for the artist.
 
 ---
 
-## Rôle de la page
+## Expected content
 
-Cette page doit permettre à un visiteur de comprendre immédiatement :
-
-- qu’il s’agit d’un groupe de musique
-- l’univers artistique de Riom
-- et d’accéder rapidement à l’écoute ou au contact
+- A large main photo of Riom
+- The name "Riom" displayed very prominently (strong typographic hero)
+- A short tagline describing the artist
+- Two main calls to action:
+  - listen to the tracks
+  - contact Riom
 
 ---
 
-## Référence design obligatoire
+## Role of the page
 
-Utiliser strictement le mockup suivant :
+This page must let a visitor immediately understand:
+
+- that this is a music artist
+- Riom's artistic universe
+- and quickly reach the listening or contact section
+
+---
+
+## Required design reference
+
+Strictly use the following mockup:
 
 /claude/design/mockups/home.png
 
-Le layout, les proportions et la hiérarchie visuelle doivent être respectés.
+The layout, proportions and visual hierarchy must be respected.
 
 ---
 
-# PAGE 2 — À PROPOS DE MARIO
+# PAGE 2 — ABOUT MARIO
 
-## Objectif
+## Objective
 
-Présenter Mario comme figure centrale du projet Riom.
-
----
-
-## Contenu attendu
-
-- Présentation de Mario
-- Rôle dans le projet :
-  - guitariste
-  - chanteur
-  - direction musicale
-- Description de son univers musical
-- Informations personnelles musicales pertinentes (expérience, style)
+Present Mario as the central figure of the Riom project.
 
 ---
 
-## Rôle de la page
+## Expected content
 
-Cette page doit mettre en avant Mario comme identité artistique principale du projet Riom.
+- Introduction of Mario
+- Role in the project:
+  - guitarist
+  - singer
+  - musical direction
+- Description of his musical universe
+- Relevant personal musical background (experience, style)
 
 ---
 
-## Référence design obligatoire
+## Role of the page
+
+This page must showcase Mario as the main artistic identity of the Riom project.
+
+---
+
+## Required design reference
 
 /claude/design/mockups/about-mario.png
 
 ---
 
-# PAGE 3 — LES MUSICIENS (MARIO / MAX / CLÉMENT)
+# PAGE 3 — THE MUSICIANS (MARIO / MAX / CLÉMENT)
 
-## Objectif
+## Objective
 
-Présenter la formation actuelle du groupe Riom.
+Present the current line-up of Riom.
 
 ---
 
-## Contenu attendu
+## Expected content
 
 ### Mario
 
-- guitare
-- voix
-- direction musicale
+- guitar
+- vocals
+- musical direction
 
 ### Max
 
-- accompagnement guitare / basse (selon contexte musical)
+- guitar / bass support (depending on the musical context)
 
 ### Clément
 
-- percussions / batterie
+- percussion / drums
 
 ---
 
-## Contenu visuel
+## Visual content
 
-- photo de Mario
-- photo de Max
-- photo de Clément
-- mise en page claire type "équipe artistique"
-
----
-
-## Rôle de la page
-
-Montrer que Riom est un groupe complet, professionnel et adaptable selon les événements.
+- photo of Mario
+- photo of Max
+- photo of Clément
+- clear "artistic team" style layout
 
 ---
 
-## Référence design obligatoire
+## Role of the page
+
+Show that Riom is a complete, professional band that adapts to each event.
+
+---
+
+## Required design reference
 
 /claude/design/mockups/musicians.png
 
 ---
 
-# PAGE 4 — ÉCOUTER (LECTEUR MUSIQUE STYLE SPOTIFY)
+# PAGE 4 — LISTEN (SPOTIFY-STYLE MUSIC PLAYER)
 
-## Objectif
+## Objective
 
-Permettre d’écouter les morceaux du groupe directement sur le site.
+Let visitors listen to Riom's tracks directly on the site.
 
 ---
 
-## Contenu attendu
+## Expected content
 
-- Liste des morceaux de Riom
-- Player audio interactif
-- Lecture des titres en continu
-- Contrôles :
+- List of Riom's tracks
+- Interactive audio player
+- Continuous track playback
+- Controls:
   - play / pause
   - next / previous
   - volume
-- Interface type Spotify (barre de lecture fixe en bas)
+- Spotify-like interface (fixed playback bar at the bottom)
 
 ---
 
-## Rôle de la page
+## Role of the page
 
-Permettre une immersion musicale complète et professionnelle.
+Provide a complete, professional musical immersion.
 
 ---
 
-## Référence design obligatoire
+## Required design reference
 
 /claude/design/mockups/music-player.png
 
 ---
 
-# PAGE 5 — VIDÉOS
+# PAGE 5 — VIDEOS
 
-## Objectif
+## Objective
 
-Montrer les performances live du groupe Riom.
+Showcase Riom's live performances.
 
 ---
 
-## Contenu attendu
+## Expected content
 
-- vidéos YouTube intégrées
+- embedded YouTube videos
 - concerts
-- événements privés
-- scènes live
+- private events
+- live stage footage
 
 ---
 
-## Rôle de la page
+## Role of the page
 
-Apporter de la preuve sociale et montrer la qualité des performances en live.
+Provide social proof and showcase the quality of live performances.
 
 ---
 
-## Référence design obligatoire
+## Required design reference
 
 /claude/design/mockups/videos.png
 
 ---
 
-# PAGE 6 — GALERIE PHOTOS
+# PAGE 6 — PHOTO GALLERY
 
-## Objectif
+## Objective
 
-Présenter l’univers visuel du groupe Riom.
-
----
-
-## Contenu attendu
-
-- photos de concerts
-- photos d’événements
-- photos en situation live
+Present Riom's visual universe.
 
 ---
 
-## Rôle de la page
+## Expected content
 
-Renforcer l’identité artistique et la crédibilité du groupe.
+- concert photos
+- event photos
+- live situation photos
 
 ---
 
-## Référence design obligatoire
+## Role of the page
+
+Reinforce the artistic identity and credibility of the band.
+
+---
+
+## Required design reference
 
 /claude/design/mockups/gallery.png
 
 ---
 
-# PAGE 7 — PRESTATIONS / "JOUER AVEC NOUS"
+# PAGE 7 — SERVICES / "BOOK US"
 
-## Objectif
+## Objective
 
-Expliquer les types d’événements où Riom intervient.
-
----
-
-## Contenu attendu
-
-- première partie d'artistes
-- concert privé à domicile
-- festivals et théâtres (concert d'1h30 environ)
-- déplacements dans toute la France (basé en Île-de-France)
+Explain the types of events where Riom performs.
 
 ---
 
-## Rôle de la page
+## Expected content
 
-Aider le visiteur à se projeter et comprendre les services proposés.
+- opening act for other artists
+- private concert at home
+- festivals and theaters (~1h30 set)
+- touring across France (based in Île-de-France)
 
 ---
 
-## Référence design obligatoire
+## Role of the page
+
+Help the visitor picture themselves booking Riom and understand the services offered.
+
+---
+
+## Required design reference
 
 /claude/design/mockups/services.png
 
 ---
 
-# PAGE 8 — ILS NOUS FONT CONFIANCE
+# PAGE 8 — REFERENCES ("THEY TRUSTED US")
 
-## Objectif
+## Objective
 
-Rassurer le visiteur en montrant des lieux et scènes connus qui ont déjà accueilli Riom.
+Reassure the visitor by showing well-known venues and stages that have already hosted Riom.
 
 ---
 
-## Contenu attendu
+## Expected content
 
-- une accroche présentant la section ("Des scènes qui nous ont invités")
-- une sélection de lieux/événements ayant accueilli Riom, illustrés par une photo cliquable renvoyant vers le site du lieu (pas de texte de description) :
-  - Le Forum (https://leforum.cergypontoise.fr/), au centre
+- a tagline introducing the section ("Stages that have hosted us")
+- a selection of venues/events that have hosted Riom, each illustrated by a clickable photo linking to the venue's website (no description text):
+  - Le Forum (https://leforum.cergypontoise.fr/), centered
   - Pacific Rock (https://pacificrock.fr/)
   - Solidays (https://www.solidays.org/)
-- la liste est évolutive : d'autres lieux pourront être ajoutés au même format quand ils seront disponibles
-- dans le menu de navigation, cette section est intitulée "Références" (l'ancre reste `#confiance`)
+- the list is expected to grow: more venues can be added in the same format as they become available
+- in the navigation menu, this section is labeled "References" (the anchor stays `#confiance`)
 
 ---
 
-## Rôle de la page
+## Role of the page
 
-Apporter une preuve sociale supplémentaire entre la présentation des prestations et le contact, pour renforcer la crédibilité de Riom avant la prise de contact.
+Provide additional social proof between the services section and contact, to reinforce Riom's credibility before getting in touch.
 
 ---
 
-## Référence design obligatoire
+## Required design reference
 
 /claude/design/mockups/trust-in-us.png
 
@@ -285,37 +285,37 @@ Apporter une preuve sociale supplémentaire entre la présentation des prestatio
 
 # PAGE 9 — CONTACT
 
-## Objectif
+## Objective
 
-Permettre la prise de contact directe pour booking.
-
----
-
-## Contenu attendu
-
-- formulaire de contact simple
-- email mis en avant : riomcontact@gmail.com (pas de numéro de téléphone sur le site)
-- possibilité de demande de devis
-- call to action clair
+Allow direct contact for booking.
 
 ---
 
-## Rôle de la page
+## Expected content
 
-Conversion finale : transformer un visiteur en client potentiel.
+- simple contact form
+- email front and center: riomcontact@gmail.com (no phone number on the site)
+- ability to request a quote
+- clear call to action
 
 ---
 
-## Référence design obligatoire
+## Role of the page
+
+Final conversion: turn a visitor into a potential client.
+
+---
+
+## Required design reference
 
 /claude/design/mockups/contact.png
 
 ---
 
-# RÈGLES GÉNÉRALES IMPORTANTES
+# IMPORTANT GENERAL RULES
 
-- Chaque page doit respecter strictement son mockup associé
-- Le design system global (/claude/core/design.md) doit être respecté en complément
-- Le SEO doit être appliqué sur toutes les pages publiques
-- Le site doit rester rapide, simple et optimisé
-- Priorité absolue à la conversion et à la clarté
+- Each page must strictly follow its associated mockup
+- The global design system (/claude/design/design.md) must also be respected
+- SEO must be applied on every public page
+- The site must stay fast, simple and optimized
+- Top priority on conversion and clarity
