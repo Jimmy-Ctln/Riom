@@ -4,7 +4,7 @@ interface Props {
 	class?: string;
 }
 
-const { to, class: className = "flex justify-center pb-12 pt-2 sm:pb-16" } = Astro.props;
+const { to, class: className = "flex justify-center pb-12 pt-10 sm:pb-16" } = Astro.props;
 ---
 
 <a href={to} aria-label="Aller à la section suivante" class={`group ${className}`}>
